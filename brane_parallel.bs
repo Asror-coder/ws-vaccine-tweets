@@ -1,0 +1,22 @@
+import compute;
+import visualize;
+
+let vaccines1 := ["covaxin", "sinopharm", "sinovac", "moderna"];
+let vaccines2 := ["pfizer", "biontech", "oxford", "astrazeneca", "sputnik"];
+
+parallel [{
+    for(let i := 1;i<=4; i := i + 1){
+    print(vaccines1[i-1]);
+    vaccine_data_processing(vaccines1[i-1]);
+}
+}, {
+    for(let i := 1;i<=5; i := i + 1){
+    print(vaccines2[i-1]);
+    vaccine_data_processing(vaccines2[i-1]);
+}
+}];
+
+
+for(let i := 1;i<=4; i := i + 1){
+    visualise(vaccines1[i-1]);
+}
